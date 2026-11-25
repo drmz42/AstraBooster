@@ -10,7 +10,7 @@ It gives an agent a repeatable method to define the real user outcome, choose ve
 
 > An independent, community-developed skill. Not affiliated with or endorsed by OpenAI, Anthropic, Codex, Claude, or Astra. It does not unlock models or change reasoning-effort settings.
 
-[Русский](README.ru.md) · [Strategy](docs/STRATEGY.md) · [Examples](#examples) · [Security](SECURITY.md) · [MIT License](LICENSE)
+[Русский](README.ru.md) · [Strategy](docs/STRATEGY.md) · [Install](#installation) · [Examples](#examples) · [Security](SECURITY.md) · [MIT License](LICENSE)
 
 ## The problem
 
@@ -70,6 +70,40 @@ AstraBooster is designed to reduce the **total cost of an accepted task**, rathe
 These are illustrative target ranges, not measured performance statistics. Simple edits may see little benefit or incur additional overhead. Higher reasoning effort and independent review can increase initial cost; the economic value comes from avoiding unnecessary rework across the entire delivery cycle.
 
 ## Installation
+
+### ChatGPT (web and supported apps)
+
+[**Download the latest plugin ZIP**](https://github.com/drmz42/AstraBooster/releases/latest) · Current release: [AstraBooster-2.1.0.zip](https://github.com/drmz42/AstraBooster/releases/download/v2.1.0/AstraBooster-2.1.0.zip)
+
+**Install**
+
+1. Download the named `AstraBooster-<version>.zip` release asset, not GitHub's automatically generated Source code archive.
+2. Open [ChatGPT Plugins](https://chatgpt.com/plugins) on the web. In the plugin management area, choose **New Plugin** or the ZIP upload option available to your account/workspace.
+3. Select the ZIP and confirm **Add plugin**. Open the plugin details and install it if prompted.
+
+**Use**
+
+In a supported ChatGPT conversation, type `@AstraBooster` and select the plugin from the mention menu (or open its card and choose **Try in chat**). Then describe your task. Selecting the actual plugin mention activates the installed integration; plain text alone is not proof that the skill was loaded.
+
+Examples:
+
+```text
+@AstraBooster Audit this project's architecture, identify material risks,
+and verify the conclusions against the available repository files.
+```
+
+```text
+@AstraBooster Investigate this bug, reproduce it in an authorized test
+environment, fix the cause, and report the verified result.
+```
+
+**Update:** Download the newer ZIP, open the existing plugin's details, and use **Upload new version** if available and permitted. Do not create a second plugin with the same package name: the importer may reject it as a duplicate.
+
+ZIP upload and skill access depend on account, workspace, client and conversation mode. Installation and mention-based access have been confirmed in ChatGPT on the web; desktop/mobile use is conditional on the plugin being available in that client. AstraBooster does not grant repository, terminal, server or network access by itself, and cannot verify an outcome without the necessary tools and permissions.
+
+See [OpenAI's plugin instructions](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt) for current upload and update options.
+
+### Codex and Claude Code
 
 Copy the entire `astra-booster/` directory into a supported skill location:
 
