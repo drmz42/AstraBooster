@@ -1,5 +1,7 @@
 # AstraBooster
 
+![AstraBooster — evidence-driven engineering for AI agents by DRMZ Lab](AstraBooster-social-preview.jpg)
+
 **Outcome-first engineering for AI coding agents.**
 
 AstraBooster is a lightweight, model-agnostic Agent Skill that helps coding agents deliver observable results rather than stop at plausible code, a green build, or a reassuring UI notification.
