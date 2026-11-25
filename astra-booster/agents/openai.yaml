@@ -2,3 +2,8 @@ interface:
   display_name: "AstraBooster"
   short_description: "Finish agent tasks with evidence of the real outcome"
   default_prompt: "Use $astra-booster to complete the requested change, verify its observable outcome, and give an evidence-based handoff."
+
+# Implicit invocation stays allowed: the description names concrete triggers.
+# To keep the skill manual-only (for example during an A/B evaluation), uncomment:
+# policy:
+#   allow_implicit_invocation: false

@@ -6,10 +6,9 @@ Load for costly tasks, multi-step investigations, large contexts or limited comp
 - Avoid a full test suite when a narrow regression check is sufficient; escalate when the risk warrants it.
 - Reuse current source-of-truth material and existing test infrastructure rather than rebuilding tooling.
 - Read only relevant files and reference pages. Do not paste entire repositories or knowledge bases into context.
-- Set a practical retry/effort budget on expensive operations. Repeating the identical failed command without changing a hypothesis is not progress.
+- Keep the retry defaults from the skill unless the host sets others. Repeating the identical failed command without a new hypothesis is not progress.
 - Do not invoke second agents, browsers, renderers or load tests for routine trivial edits.
-- Respect existing model/effort configuration. A skill cannot select inaccessible models or change the host's inference settings.
-- For quality-first complex work with GPT-6.2 Astra, prefer `xhigh`; consider `max` for exceptionally demanding or high-risk tasks when supported and justified by cost and evaluation. For simpler work, use a proportionate effort level. The user or orchestrator selects the setting; never silently change it or claim it was applied without evidence.
+- Respect the existing model and effort configuration. The user or orchestrator selects it; a skill cannot change it or claim it was applied without evidence.
 - Report the result and evidence concisely; do not narrate every intermediate tool call.
 
-Use representative acceptance scenarios to compare quality, effort and costs across workflow versions.
+Judge a workflow by the cost and time to an accepted, verified result, including rework, not by tokens alone.

@@ -82,6 +82,15 @@ The installed folder must contain `SKILL.md`, `references/`, and `agents/`. **Ke
 
 Invoke `$astra-booster` in Codex. In supported Claude Code installations use `/astra-booster`, or allow skill discovery from its description. Tool availability and authorizations remain controlled by the host.
 
+### Invocation modes
+
+| Mode | When | How |
+| --- | --- | --- |
+| Automatic (default) | Day-to-day use; the description names concrete triggers and exclusions | Install as is |
+| Manual only | A/B evaluation baseline, or teams that want explicit opt-in | Claude Code: add `disable-model-invocation: true` to the `SKILL.md` frontmatter. Codex: uncomment the `policy` block in `agents/openai.yaml` |
+
+Check automatic activation against [tests/triggers.md](tests/triggers.md).
+
 ## Recommended reasoning effort for Astra
 
 For quality-first, complex engineering tasks with GPT-6.2 Astra, AstraBooster recommends **Extra High (`xhigh`)**. Use **Maximum (`max`)** for particularly demanding tasks when the selected model, host and budget support it.
@@ -91,7 +100,7 @@ For quality-first, complex engineering tasks with GPT-6.2 Astra, AstraBooster re
 | Complex implementation, debugging, architecture and end-to-end acceptance | `xhigh` |
 | High-risk or exceptionally demanding engineering and independent review | `max`, when supported and justified |
 
-Select the model and effort in your agent's model settings before starting the task, then invoke `$astra-booster`. This is a quality-first recommendation, not a mandatory runtime requirement: simple tasks may use less effort, and other compatible models may use their own supported settings. Higher effort can increase latency and token usage; compare actual quality and cost for your workload. AstraBooster cannot change these settings itself.
+This recommendation lives only in the README; the skill files stay model-agnostic. Select the model and effort in your agent's model settings before starting the task, then invoke `$astra-booster`. This is a quality-first recommendation, not a mandatory runtime requirement: simple tasks may use less effort, and other compatible models may use their own supported settings. Higher effort can increase latency and token usage; compare actual quality and cost for your workload. AstraBooster cannot change these settings itself.
 
 Official references: [GPT-6.2 Astra](https://developers.openai.com/api/docs/models/gpt-6.2-astra) · [Reasoning effort](https://developers.openai.com/api/docs/guides/reasoning).
 
@@ -137,7 +146,7 @@ astra-booster/
   references/               # Read only what the task needs
 docs/                       # Product strategy and architecture
 examples/                   # Optional project rules, never auto-merged
-tests/                      # Structural validator and scenario library
+tests/                      # Validator, scenario library and trigger cases
 ```
 
 ## Scope and security

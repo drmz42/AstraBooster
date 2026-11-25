@@ -1,54 +1,58 @@
 ---
 name: astra-booster
-description: Outcome-based quality workflow for multi-step coding tasks, UI, API integrations, data persistence and agent handoffs. Use for work requiring real verification; skip simple Q&A or copy edits.
+description: Verify that a multi-step coding change delivers its real outcome when the result leaves the process (stored data, jobs, messages, external APIs, payments, rendered UI) or is handed to another agent; skip questions, copy or style edits and single local functions already covered by a unit test.
 ---
 
 # AstraBooster: deliver the outcome
 
-This skill is a practical acceptance protocol for an existing coding agent. It does not expand tool access, user authority or available model settings. Follow existing repository policies and explicit user constraints.
+An acceptance protocol for an existing coding agent; it grants no tools, authority or model settings. Host and project rules win: where they already cover honesty, reporting, security or approvals, use this skill only for the evidence ladder and acceptance method, and put the evidence level into the project's report format.
 
 ## A. Define observable completion
 
-Before implementing, identify privately and concisely:
-- **Action:** what the user or another system must be able to do.
-- **Evidence:** where the outcome should be visible or readable.
-- **Boundary:** allowed environment, dependencies, data, budget and actions requiring permission.
+Before editing, state concisely:
+- **Action:** what a user or another system must be able to do.
+- **Evidence:** where the outcome becomes visible or readable.
+- **Boundary:** environment, data, budget and actions that need permission.
 
-Inspect the relevant code, configuration, repository instructions and current work before editing. Prefer the current architecture to a speculative rewrite. Do not replace a requested functioning feature with a mock or visual demonstration without saying so.
+Record them in the task note if work may span sessions or agents. Inspect relevant code, configuration and current changes first. Prefer the current architecture; never present a mock or demo as the requested feature.
 
 ## B. Match checks to risk
 
-| Risk | Typical change | Appropriate verification |
+| Risk | Change | Verification |
 | --- | --- | --- |
-| Low | Documentation, isolated wording or styling | Inspect output and run one cheap targeted check. |
-| Medium | UI behavior, routine API or refactor | Targeted behavioral test, plausible failure state, changed-scope regression. |
-| High | Identity, storage, transactions, concurrency, integration | Authorized end-to-end action, downstream evidence, targeted negative/security checks and review if warranted. |
-| Restricted | Production, external communication, payments, deletes or infrastructure | Read-only discovery first. Mutate only with explicit authorization. |
+| Low | Docs, wording, isolated styling | Inspect output; one cheap targeted check. |
+| Medium | UI behavior, routine API, refactor | Targeted behavior test, a plausible failure state, changed-scope regression. |
+| High | Identity, storage, transactions, concurrency, integration | Authorized end-to-end action, downstream evidence, negative/security checks, review if warranted. |
+| Restricted | Production, outbound messages, payments, deletes, infrastructure | Read-only discovery; mutate only with explicit authorization. |
 
-Read the relevant references **on demand**, never all by default: [acceptance](references/acceptance.md), [interface](references/interface.md), [security](references/security.md), [efficiency](references/efficiency.md), [review](references/review.md), [handoff](references/handoff.md), [evaluation](references/evaluation.md).
+Open a reference only when its trigger applies:
+- [acceptance](references/acceptance.md): data, jobs, messages, APIs, auth, bots, timers, no staging.
+- [interface](references/interface.md): rendered pages, apps, responsive layout.
+- [security](references/security.md): restricted actions where host policy is silent.
+- [efficiency](references/efficiency.md): expensive checks, large contexts, tight budgets.
+- [review](references/review.md): high risk worth a second reviewer.
+- [handoff](references/handoff.md): interrupted, delegated or parallel work.
+- [evaluation](references/evaluation.md): comparing workflow versions.
 
 ## C. Implement, falsify, correct
 
-Make the smallest change that can satisfy the observable outcome. Use existing tools and fixtures. Select a test capable of **disproving** success, not only demonstrating code execution.
+Make the smallest change that satisfies the outcome. Choose a check that could **disprove** success: a bug's check fails before the fix and passes after; a feature's check would fail without the change.
 
-If the outcome leaves the process (form, API, queue, database, notification), follow the approved path to its receiving end or verify by independent read-back. Correlate test input with downstream output using a unique marker in an authorized test environment.
+If the outcome leaves the process, follow the permitted path to its receiver: tag test input with a unique marker in an authorized test environment and find that marker there, read through a different path than the writer (the store or inbox, not the API that reported success).
 
-Use these reporting levels accurately:
-
+Evidence ladder (report the highest level actually observed):
 1. **Changed:** the artifact exists.
-2. **Build-checked:** the relevant build, lint or type check ran.
-3. **Behavior-checked:** an actual targeted assertion passed.
-4. **Flow-checked:** a permitted user/API journey exercised the relevant components.
-5. **Effect-confirmed:** the expected destination or persisted result was observed independently.
+2. **Build-checked:** build, lint or type check ran.
+3. **Behavior-checked:** a targeted assertion passed.
+4. **Flow-checked:** a permitted user/API journey ran through the components.
+5. **Effect-confirmed:** the marked result was read back independently at its destination.
 
-A green build, a mocked API response, a success toast, or the absence of errors is not evidence of delivery.
+Name the environment with the level (local, staging, production). A green build, mocked response, success toast or absence of errors is not delivery.
 
-When a check fails, locate a concrete cause, make a scoped correction and rerun the affected check. Avoid repeating expensive attempts without a new hypothesis. Respect resource and iteration budgets; stop when there is a real access or authorization boundary.
+On failure, find a concrete cause, fix within scope and rerun the affected check. Defaults unless the host sets others: the same failing command at most twice without a new hypothesis; stop and report after three fix cycles without progress; expensive checks (browser, end-to-end, load) once per fix. Stop at real access or authorization boundaries.
 
-## D. Inspect and hand off
+## D. Review and hand off
 
-Review the final diff and regressions within its scope. For high-risk work, use an existing authorized second reviewer if its cost is justified; do not equate self-review with independent review.
+Review the final diff and in-scope regressions. For high risk, use an existing authorized reviewer if the cost is justified; label self-review as such.
 
-Provide a short handoff: **outcome, environment, highest observed evidence, actionable blockers or remaining risk**. Never invent execution results, metrics, tool access or external effects. Never expose secrets or customer data.
-
-This skill supplements rather than replaces specialized testing, security, product-design and deployment skills.
+Report each outcome as `Evidence: <level> (<environment>): <where observed>; not confirmed: <what and why>`, then blockers or remaining risk. Never invent results, metrics, access or external effects; never expose secrets or customer data.
