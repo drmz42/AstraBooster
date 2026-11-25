@@ -101,7 +101,7 @@ Each installation inherits its own repository instructions and permissions. The 
 
 ### Context efficiency
 
-A skill should be invoked only when its value outweighs the overhead. Metadata is compact; `SKILL.md` indexes each reference with its trigger, so an agent opens only the one it needs. Default retry limits bound repair loops, and the validator caps the size of `SKILL.md`. Routine changes should not trigger expensive renderers, parallel agents or full regression suites.
+A skill should be invoked only when its value outweighs the overhead. Metadata is compact; relevant references load only for applicable work. Routine changes should not trigger expensive renderers, parallel agents or full regression suites.
 
 ## Potential efficiency gains
 

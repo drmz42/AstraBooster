@@ -12,7 +12,6 @@
 - Model-specific reasoning-effort advice removed from the skill files (kept in the README).
 - Evaluation: run record fields, cost to accepted result, blind review, control tasks and A/B order alternation.
 - Validator: `SKILL.md` size budget, one-sentence description, reference index check, no model names inside the skill; new trigger cases and scenarios F and G.
-- Documented automatic and manual-only invocation modes.
 
 ## 2.0.1 — 2026-11-25
 
