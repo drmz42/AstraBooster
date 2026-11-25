@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.0 — unreleased
+## 2.1.0 — 2026-11-25
 
 - One-sentence description with concrete triggers (data, jobs, messages, external APIs, payments, rendered UI, handoffs) and explicit exclusions, for reliable automatic activation.
 - Host and project rules take precedence; the skill adds the evidence ladder and acceptance method and reports inside the project's format.
