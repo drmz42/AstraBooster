@@ -13,6 +13,8 @@ Before viewing outputs, fix the acceptance criteria, objective post-run checks, 
 | Time | wall time, time to accepted result, tool calls, repair cycles, repeated actions, human interventions |
 | Quality | acceptance criteria passed, highest evidence level reached, defects found and missed, regressions, false success claims, unauthorized actions |
 
+For Claude Code, `tools/token_profile.py` in the AstraBooster repository fills the Cost fields from local session logs without reading prompts: run it with `--session <id>` for each run and add the sessions of repairs and reviews.
+
 Primary measure: **cost to accepted result** = cost of the run + cost of every repair, rerun and review until the result passes the fixed criteria. Report absolute and relative differences.
 
 Independent review: give a second agent the objective, criteria, diff and check output with variant labels removed, and ask for reproducible violations only (see [review](review.md)).

@@ -63,7 +63,27 @@ for p in ROOT.rglob("*.md"):
         if path and not (p.parent / path).exists():
             ERRORS.append(f"Broken link: {p.relative_to(ROOT)} -> {link}")
 
+TOOL = ROOT / "tools" / "token_profile.py"
+FIXTURE = ROOT / "tests" / "fixtures" / "claude-code"
+if not TOOL.is_file():
+    ERRORS.append("Missing tools/token_profile.py")
+else:
+    import json
+    import subprocess
+    run = subprocess.run([sys.executable, "-I", str(TOOL), "--json", str(FIXTURE)], capture_output=True, text=True)
+    try:
+        report = json.loads(run.stdout)
+    except ValueError:
+        report = None
+    expected = {"session_start": 2, "compaction": 1, "expired": 2, "model_switch": 1, "unexplained": 1}
+    if run.returncode or not report:
+        ERRORS.append(f"token_profile.py failed on the fixture: {run.stderr.strip()[-300:]}")
+    elif (report["requests"], report["cost_usd"]["total"], report["unpriced_requests"], report["tool_turns"],
+            report["single_call_tool_turn_share"]) != (9, 1.046, {"claude-unknown-9": 1}, 1, 0.0) \
+            or {k: v["count"] for k, v in report["rebuilds"].items()} != expected:
+        ERRORS.append("token_profile.py fixture totals or rebuild labels changed")
+
 if ERRORS:
     print("FAILED:\n" + "\n".join("- " + e for e in ERRORS))
     sys.exit(1)
-print("OK: AstraBooster manifest, size budget, reference index, triggers, docs and links")
+print("OK: AstraBooster manifest, size budget, reference index, triggers, docs, links and token profiler")
