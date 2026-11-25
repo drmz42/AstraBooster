@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Documented recommended GPT-6.2 Astra reasoning settings (`xhigh` for complex quality-first tasks; `max` where supported and justified) in both READMEs and the efficiency reference.
+
 ## 2.0.0 — 2026-11-25
 
 - Independent AstraBooster skill and Agent Skills-compatible manifest.

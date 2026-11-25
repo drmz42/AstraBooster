@@ -65,6 +65,19 @@ The installed folder must contain `SKILL.md`, `references/`, and `agents/`. **Ke
 
 Invoke `$astra-booster` in Codex. In supported Claude Code installations use `/astra-booster`, or allow skill discovery from its description. Tool availability and authorizations remain controlled by the host.
 
+## Recommended reasoning effort for Astra
+
+For quality-first, complex engineering tasks with GPT-6.2 Astra, AstraBooster recommends **Extra High (`xhigh`)**. Use **Maximum (`max`)** for particularly demanding tasks when the selected model, host and budget support it.
+
+| Workload | Astra reasoning effort |
+| --- | --- |
+| Complex implementation, debugging, architecture and end-to-end acceptance | `xhigh` |
+| High-risk or exceptionally demanding engineering and independent review | `max`, when supported and justified |
+
+Select the model and effort in your agent's model settings before starting the task, then invoke `$astra-booster`. This is a quality-first recommendation, not a mandatory runtime requirement: simple tasks may use less effort, and other compatible models may use their own supported settings. Higher effort can increase latency and token usage; compare actual quality and cost for your workload. AstraBooster cannot change these settings itself.
+
+Official references: [GPT-6.2 Astra](https://developers.openai.com/api/docs/models/gpt-6.2-astra) · [Reasoning effort](https://developers.openai.com/api/docs/guides/reasoning).
+
 ## Examples
 
 **Contact form**
