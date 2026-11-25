@@ -103,6 +103,42 @@ Each installation inherits its own repository instructions and permissions. The 
 
 A skill should be invoked only when its value outweighs the overhead. Metadata is compact; relevant references load only for applicable work. Routine changes should not trigger expensive renderers, parallel agents or full regression suites.
 
+## Potential efficiency gains
+
+AstraBooster is designed to reduce the **total cost of an accepted task**, rather than merely minimize the cost of a single model call. The following ranges are planning targets for complex, multi-step work; actual outcomes depend on task type, existing engineering practices, model, reasoning effort and tool access.
+
+| Metric | Potential improvement |
+| --- | ---: |
+| Less manual intervention | 30–50% |
+| Fewer correction cycles | 20–40% |
+| Fewer missed defects | 20–40% |
+| Higher overall productivity | 15–30% |
+| Shorter time to accepted result | 10–25% |
+| Lower total token usage per accepted task | 5–20% |
+
+These are illustrative target ranges, not measured performance statistics. Simple edits may see little benefit or incur additional overhead. Higher reasoning effort and independent review can increase initial cost; the economic value comes from avoiding unnecessary rework across the entire delivery cycle.
+
+## Efficiency by task type
+
+Illustrative productivity targets, expressed as potential improvement in the number of accepted tasks per unit of effort:
+
+| Task | Target improvement |
+| --- | ---: |
+| Simple edits | −5% to +5% |
+| Feature development | 10–25% |
+| Debugging | 15–30% |
+| APIs and integrations | 15–35% |
+| Frontend and UX | 10–25% |
+| DevOps and infrastructure | 10–30% |
+| Multi-agent collaboration | 15–35% |
+| Complex multi-step tasks | 20–40% |
+
+### Illustrative economics
+
+Assume a workload costs $1,000 per month and consumes 200 agent-hours. A 15% reduction in total cost would save $150 per month ($1,800 per year); a separate 20% reduction in execution time would free 40 agent-hours per month (480 per year). These are scenario calculations under chosen assumptions, not observed results.
+
+Compare against the same model, reasoning level and task mix. Prioritize acceptance rate, defects, manual interventions, end-to-end latency and total cost per accepted task. See the [evaluation protocol](../astra-booster/references/evaluation.md).
+
 ## Use cases
 
 **Contact form:** submit a tagged request to staging; follow it through API processing and identify the same tag at the permitted CRM or inbox. A success message is not the acceptance criterion.

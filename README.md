@@ -52,6 +52,21 @@ AstraBooster is designed as **a portable quality layer, not another coding agent
 
 Read the [product strategy and architecture](docs/STRATEGY.md) for positioning, workflow, use cases, differentiation and extension principles. [Стратегия по-русски](docs/STRATEGY.ru.md).
 
+## Potential efficiency gains
+
+AstraBooster is designed to reduce the **total cost of an accepted task**, rather than merely minimize the cost of a single model call. The following ranges are planning targets for complex, multi-step work; actual outcomes depend on task type, existing engineering practices, model, reasoning effort and tool access.
+
+| Metric | Potential improvement |
+| --- | ---: |
+| Less manual intervention | 30–50% |
+| Fewer correction cycles | 20–40% |
+| Fewer missed defects | 20–40% |
+| Higher overall productivity | 15–30% |
+| Shorter time to accepted result | 10–25% |
+| Lower total token usage per accepted task | 5–20% |
+
+These are illustrative target ranges, not measured performance statistics. Simple edits may see little benefit or incur additional overhead. Higher reasoning effort and independent review can increase initial cost; the economic value comes from avoiding unnecessary rework across the entire delivery cycle.
+
 ## Installation
 
 Copy the entire `astra-booster/` directory into a supported skill location:
