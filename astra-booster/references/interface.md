@@ -9,4 +9,6 @@ Load for sites, apps, dashboards, landing pages, media exports, design implement
 5. Inspect navigation, labels, feedback, legibility, clipping, keyboard use and obvious accessibility problems.
 6. Fix materially broken behavior and reopen affected states.
 
+Name the viewports and states you actually checked in the evidence line.
+
 If no browser, screenshot or runtime environment is accessible, perform alternative checks but never claim a visual inspection occurred. Design choices must support the actual task rather than generic polish.

@@ -1,6 +1,6 @@
 # Security and permission gates
 
-Read for auth, databases, infrastructure, network, CI/CD, production, financial operations, long-running workers or external side effects.
+Read for auth, databases, infrastructure, network, CI/CD, production, financial operations, long-running workers or external side effects. Where host or project policy already covers a point, follow that policy; this list fills gaps.
 
 - Determine the environment (dev, staging, production), the source of truth and current permissions. An available SSH session is not authorization.
 - Inspect existing code and uncommitted changes before editing. Keep modifications scoped and reversible.
