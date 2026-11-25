@@ -1,0 +1,4 @@
+interface:
+  display_name: "AstraBooster"
+  short_description: "Finish agent tasks with evidence of the real outcome"
+  default_prompt: "Use $astra-booster to complete the requested change, verify its observable outcome, and give an evidence-based handoff."
