@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.0.1 — 2026-11-25
 
 - Documented recommended GPT-6.2 Astra reasoning settings (`xhigh` for complex quality-first tasks; `max` where supported and justified) in both READMEs and the efficiency reference.
 
