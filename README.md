@@ -73,7 +73,7 @@ These are illustrative target ranges, not measured performance statistics. Simpl
 
 ### ChatGPT (web and supported apps)
 
-[**Download the latest plugin ZIP**](https://github.com/drmz42/AstraBooster/releases/latest) · Current release: [AstraBooster-2.1.0.zip](https://github.com/drmz42/AstraBooster/releases/download/v2.1.0/AstraBooster-2.1.0.zip)
+[**Download the latest plugin ZIP**](https://github.com/drmz42/AstraBooster/releases/latest) · Current release: [AstraBooster-2.2.0.zip](https://github.com/drmz42/AstraBooster/releases/download/v2.2.0/AstraBooster-2.2.0.zip)
 
 **Install**
 
