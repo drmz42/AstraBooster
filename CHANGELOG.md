@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.0 — 2026-11-25
+
+- `tools/token_profile.py`: token and prompt-cache profile of Claude Code sessions from local logs (cost by category at API list prices, cache hit share, context size, single-call tool turns, full cache rebuilds by cause, most expensive sessions; `--session` for evaluation runs, `--json`, `--prices`). Reads only usage counters and timestamps; standard library only.
+- Efficiency reference: batch independent calls, keep check output small without losing the exit code, start a fresh session at a task boundary.
+- Evaluation reference: fill the Cost fields with `tools/token_profile.py`.
+- Validator runs the profiler on a synthetic fixture and checks its totals and rebuild labels.
+
 ## 2.1.0 — 2026-11-25
 
 - One-sentence description with concrete triggers (data, jobs, messages, external APIs, payments, rendered UI, handoffs) and explicit exclusions, for reliable automatic activation.
