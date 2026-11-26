@@ -105,37 +105,37 @@ A skill should be invoked only when its value outweighs the overhead. Metadata i
 
 ## Potential efficiency gains
 
-AstraBooster is designed to reduce the **total cost of an accepted task**, rather than merely minimize the cost of a single model call. The following ranges are planning targets for complex, multi-step work; actual outcomes depend on task type, existing engineering practices, model, reasoning effort and tool access.
+AstraBooster is designed to reduce the **total cost of an accepted task**, not just the cost of a single model call. The table shows expected improvements for complex, multi-step work; the effect depends on task type, existing engineering practices, model, reasoning effort and available tools.
 
-| Metric | Potential improvement |
+| Metric | Expected improvement |
 | --- | ---: |
-| Less manual intervention | 30–50% |
-| Fewer correction cycles | 20–40% |
-| Fewer missed defects | 20–40% |
-| Higher overall productivity | 15–30% |
-| Shorter time to accepted result | 10–25% |
-| Lower total token usage per accepted task | 5–20% |
+| Less manual intervention | 5–15% |
+| Fewer correction cycles | 5–15% |
+| Fewer missed defects | 5–15% |
+| Higher overall productivity | 5–10% |
+| Shorter time to accepted result | 0–10% |
+| Lower total token usage per accepted task | −5% to +10% |
 
-These are illustrative target ranges, not measured performance statistics. Simple edits may see little benefit or incur additional overhead. Higher reasoning effort and independent review can increase initial cost; the economic value comes from avoiding unnecessary rework across the entire delivery cycle.
+Simple edits may incur up to 5% more token cost when added context or verification does not prevent rework. Higher reasoning effort and independent review can also increase initial cost; savings come from avoiding repeat work across the full delivery cycle. A negative value in the token row means increased token usage.
 
 ## Efficiency by task type
 
-Illustrative productivity targets, expressed as potential improvement in the number of accepted tasks per unit of effort:
+Expected productivity improvement, expressed as the number of accepted tasks per unit of effort:
 
-| Task | Target improvement |
+| Task | Expected improvement |
 | --- | ---: |
 | Simple edits | −5% to +5% |
-| Feature development | 10–25% |
-| Debugging | 15–30% |
-| APIs and integrations | 15–35% |
-| Frontend and UX | 10–25% |
-| DevOps and infrastructure | 10–30% |
-| Multi-agent collaboration | 15–35% |
-| Complex multi-step tasks | 20–40% |
+| Feature development | 0–10% |
+| Debugging | 0–10% |
+| APIs and integrations | 0–10% |
+| Frontend and UX | 0–10% |
+| DevOps and infrastructure | 0–10% |
+| Multi-agent collaboration | 0–10% |
+| Complex multi-step tasks | 5–10% |
 
 ### Illustrative economics
 
-Assume a workload costs $1,000 per month and consumes 200 agent-hours. A 15% reduction in total cost would save $150 per month ($1,800 per year); a separate 20% reduction in execution time would free 40 agent-hours per month (480 per year). These are scenario calculations under chosen assumptions, not observed results.
+Assume a workload costs $1,000 per month and consumes 200 agent-hours. A 10% reduction in total cost saves $100 per month ($1,200 per year); a separate 10% reduction in execution time frees 20 agent-hours per month (240 per year).
 
 Compare against the same model, reasoning level and task mix. Prioritize acceptance rate, defects, manual interventions, end-to-end latency and total cost per accepted task. See the [evaluation protocol](../astra-booster/references/evaluation.md).
 

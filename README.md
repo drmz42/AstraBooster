@@ -56,18 +56,18 @@ Read the [product strategy and architecture](docs/STRATEGY.md) for positioning, 
 
 ## Potential efficiency gains
 
-AstraBooster is designed to reduce the **total cost of an accepted task**, rather than merely minimize the cost of a single model call. The following ranges are planning targets for complex, multi-step work; actual outcomes depend on task type, existing engineering practices, model, reasoning effort and tool access.
+AstraBooster is designed to reduce the **total cost of an accepted task**, not just the cost of a single model call. The table shows expected improvements for complex, multi-step work; the effect depends on task type, existing engineering practices, model, reasoning effort and available tools.
 
-| Metric | Potential improvement |
+| Metric | Expected improvement |
 | --- | ---: |
-| Less manual intervention | 30–50% |
-| Fewer correction cycles | 20–40% |
-| Fewer missed defects | 20–40% |
-| Higher overall productivity | 15–30% |
-| Shorter time to accepted result | 10–25% |
-| Lower total token usage per accepted task | 5–20% |
+| Less manual intervention | 5–15% |
+| Fewer correction cycles | 5–15% |
+| Fewer missed defects | 5–15% |
+| Higher overall productivity | 5–10% |
+| Shorter time to accepted result | 0–10% |
+| Lower total token usage per accepted task | −5% to +10% |
 
-These are illustrative target ranges, not measured performance statistics. Simple edits may see little benefit or incur additional overhead. Higher reasoning effort and independent review can increase initial cost; the economic value comes from avoiding unnecessary rework across the entire delivery cycle.
+Simple edits may incur up to 5% more token cost when added context or verification does not prevent rework. Higher reasoning effort and independent review can also increase initial cost; savings come from avoiding repeat work across the full delivery cycle. A negative value in the token row means increased token usage.
 
 ## Installation
 
